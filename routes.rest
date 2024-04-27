@@ -1,4 +1,8 @@
 # GET REQUEST FOR ALL CONTACTS
 GET https://cse341-project-one-contacts.onrender.com/contacts
 
+# GET REQUEST FOR HELLO WORLD
+GET http://localhost:3000
 
+# GET REQUEST FROM LOCAL HOST THAT SHOWS ALL CONTACTS
+GET http://localhost:3000/contacts
