@@ -1,7 +1,7 @@
 const routes = require('express').Router();
 const testController = require('../controllers/test');
 
-routes.get('/', testController.camelleRoute);
-routes.use('/users', require('./users'));
+routes.get('/', testController.helloWorld);
+routes.use('/contacts', require('./contacts'));
 
 module.exports = routes;
