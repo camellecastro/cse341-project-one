@@ -1,0 +1,4 @@
+# GET REQUEST FOR ALL CONTACTS
+GET https://cse341-project-one-contacts.onrender.com/contacts
+
+
