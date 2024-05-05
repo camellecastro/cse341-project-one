@@ -22,7 +22,7 @@ Content-Type: application/json
     "lastName": "Test",
     "email": "test@test.com",
     "favoriteColor": "Red",
-    "birthdate": "06/12/1990"
+    "birthday": "06/12/1990"
 }
 
 ### PUT REQUEST FROM LOCAL HOST TO UPDATE CONTACT BY ID
@@ -35,7 +35,7 @@ Content-Type: application/json
     "lastName": "Doe",
     "email": "jdoe@test.com",
     "favoriteColor": "Red",
-    "birthdate": "12/12/1980"
+    "birthday": "12/12/1980"
 }
 
 ### DELETE REQUEST FROM LOCAL HOST TO DELETE ONE CONTACT BY ID
