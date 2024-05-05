@@ -1,8 +1,43 @@
-# GET REQUEST FOR ALL CONTACTS
+### GET REQUEST FOR ALL CONTACTS
 GET https://cse341-project-one-contacts.onrender.com/contacts
 
-# GET REQUEST FOR HELLO WORLD
-GET http://localhost:3000
+### GET REQUEST FOR HELLO WORLD
+GET http://localhost:3000/
 
-# GET REQUEST FROM LOCAL HOST THAT SHOWS ALL CONTACTS
+### GET REQUEST FROM LOCAL HOST THAT SHOWS ALL CONTACTS
+// GET ALL CONTACTS
 GET http://localhost:3000/contacts
+
+### GET REQUEST FROM LOCAL HOST THAT SHOWS ONE CONTACT BY ID
+// GET ONE CONTACT
+GET http://localhost:3000/contacts/650c5812c06bc031e32200a1
+
+### POST REQUEST FROM LOCAL HOST TO CREATE A NEW CONTACT
+// POST NEW CONTACT
+POST http://localhost:3000/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Test",
+    "lastName": "Test",
+    "email": "test@test.com",
+    "favoriteColor": "Red",
+    "birthdate": "06/12/1990"
+}
+
+### PUT REQUEST FROM LOCAL HOST TO UPDATE CONTACT BY ID
+// UPDATE CONTACT BY ID
+PUT http://localhost:3000/contacts/6636d01d2f7eb05a58fdac32 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "jdoe@test.com",
+    "favoriteColor": "Red",
+    "birthdate": "12/12/1980"
+}
+
+### DELETE REQUEST FROM LOCAL HOST TO DELETE ONE CONTACT BY ID
+// DELETE CONTACT BY ID
+DELETE http://localhost:3000/contacts/6636d2ed4053fae865ee7fe0 HTTP/1.1

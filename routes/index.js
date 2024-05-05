@@ -1,7 +1,11 @@
-const routes = require('express').Router();
+const router = require('express').Router();
+
+router.use('/', require('./swagger'));
+
 const testController = require('../controllers/test');
 
-routes.get('/', testController.helloWorld);
-routes.use('/contacts', require('./contacts'));
+router.get('/', testController.helloWorld);
 
-module.exports = routes;
+router.use('/contacts', require('./contacts'));
+
+module.exports = router;

@@ -4,11 +4,13 @@
   "description": "Project 1 in CSE 341",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/camellecastro/cse341-project-one.git"
+    "url": "git+https://github.com/camellecastro/cse341-project-one.git",
+    "swagger": "node ./swagger.js"
   },
   "keywords": [
     "Node.js",
@@ -27,6 +29,10 @@
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongodb": "^6.5.0"
+    "mongodb": "^6.5.0",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "swagger-autogen": "^2.23.7"
   }
 }
