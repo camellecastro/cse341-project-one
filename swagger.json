@@ -8,7 +8,6 @@
   "host": "cse341-project-one-contacts.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
