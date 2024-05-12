@@ -30,8 +30,11 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "express-validator": "^7.0.1",
     "mongodb": "^6.5.0",
-    "swagger-ui-express": "^5.0.0"
+    "mongoose": "^8.3.4",
+    "swagger-ui-express": "^5.0.0",
+    "validatorjs": "^3.22.1"
   },
   "devDependencies": {
     "swagger-autogen": "^2.23.7"

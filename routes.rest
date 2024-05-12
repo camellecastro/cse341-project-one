@@ -37,10 +37,10 @@ Content-Type: application/json
     "firstName": "John",
     "lastName": "Doe",
     "email": "jdoe@test.com",
-    "favoriteColor": "Red",
+    "favoriteColor": "Green",
     "birthday": "12/12/1980"
 }
 
 ### DELETE REQUEST FROM LOCAL HOST TO DELETE ONE CONTACT BY ID
 // DELETE CONTACT BY ID
-DELETE http://localhost:3000/contacts/6636f13bc74555044d4da6fd HTTP/1.1
+DELETE http://localhost:3000/contacts/6636f8a5c407ef093cb2fa99 HTTP/1.1

@@ -1,35 +1,59 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll = async (req, res) => {
+const getAll = (req, res) => {
     /*
         #swagger.tags["Contacts"];
         */
-    const result = await mongodb
+    mongodb
         .getDb("Cluster1")
         .db("project1")
         .collection("contacts")
-        .find();
-    result.toArray().then((contacts) => {
-        res.setHeader("Content-Type", "application/json");
-        res.status(200).json(contacts);
-    });
+        .find({ _id: contactId })
+        .toArray((err, lists) => {
+            if (err) {
+                res.status(400).json({ message: err });
+            }
+            res.setHeader("Content-Type", "application/json");
+            res.status(200).json(lists);
+            // const result = await mongodb
+            //     .getDb("Cluster1")
+            //     .db("project1")
+            //     .collection("contacts")
+            //     .find();
+            // result.toArray().then((contacts) => {
+            //     res.setHeader("Content-Type", "application/json");
+            //     res.status(200).json(contacts);
+            // });
+        });
 };
 
-const getSingle = async (req, res) => {
+const getSingle = (req, res) => {
     /*
-    #swagger.tags["Contacts"];
-    */
+        #swagger.tags["Contacts"];
+        */
     const contactId = new ObjectId(req.params.id);
-    const result = await mongodb
+    mongodb
         .getDb("Cluster1")
         .db("project1")
         .collection("contacts")
-        .find({ _id: contactId });
-    result.toArray().then((contacts) => {
-        res.setHeader("Content-Type", "application/json");
-        res.status(200).json(contacts[0]);
-    });
+        .find({ _id: contactId })
+        .toArray((err, result) => {
+            if (err) {
+                res.status(400).json({ message: err });
+            }
+            res.setHeader("Content-Type", "application/json");
+            res.status(200).json(result[0]);
+        });
+  // const result = await mongodb
+  //     .getDb("Cluster1")
+  //     .db("project1")
+  //     .collection("contacts")
+  //     .find({ _id: contactId });
+  // result.toArray().then((contacts) => {
+  //     res.setHeader("Content-Type", "application/json");
+  //     res.status(200).json(contacts[0]);
+  // });
 };
 
 
@@ -44,7 +68,7 @@ const createContact = async (req, res) => {
     };
     const response = await mongodb.getDb('Cluster1').db('project1').collection('contacts').insertOne(contact);
     if (response.acknowledged) {
-        res.status(204).send();
+        res.status(201).json(response);
     } else {
         res
         .status(500)
