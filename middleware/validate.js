@@ -12,7 +12,7 @@ const saveContact = (req, res, next) => {
       res.status(412).send({
         success: false,
         message: "Validation failed",
-        data: err,
+        data: err
       });
     } else {
       next();
