@@ -9,7 +9,7 @@ const getAll = (req, res) => {
         .getDb("Cluster1")
         .db("project1")
         .collection("contacts")
-        .find({ _id: contactId })
+        .find()
         .toArray((err, lists) => {
             if (err) {
                 res.status(400).json({ message: err });
@@ -29,6 +29,9 @@ const getAll = (req, res) => {
 };
 
 const getSingle = (req, res) => {
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Must use a valid contact id to find a contact.');
+    }
     /*
         #swagger.tags["Contacts"];
         */
